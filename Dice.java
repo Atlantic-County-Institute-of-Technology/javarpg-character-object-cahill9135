@@ -20,7 +20,7 @@ class Dice {
 
     //adds a number of dice equal to count (>0) dice to any of the sides (>0) to the list
     public void addDie(int count, int sides) {
-        for(int i=0; i <= count; i++)
+        for(int i=0; i < count; i++)
             addDie(sides);
     }
 
@@ -86,6 +86,7 @@ class Dice {
         }
     };
 
+    // remove a dice at an index
     public void removeDie(int index) {
         if (index < 0 || index >= dice.size()){
             throw new IndexOutOfBoundsException("Invalid die index: " + index);
@@ -93,6 +94,7 @@ class Dice {
         dice.remove(index);
     }
 
+    // sort the dice least to greatest
     public void sortDice() {
         Collections.sort(dice, new Comparator<Die>() {
             public int compare(Die d1, Die d2) {
@@ -137,3 +139,5 @@ class Dice {
 
     }
 }
+
+
